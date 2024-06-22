@@ -18,7 +18,10 @@ class Solution:
                 return recu(node.left, depth + 1)
             else:
                 return max(recu(node.left, depth + 1), recu(node.right, depth + 1))
-        return recu(root, 0)
+        if root != None:   
+            return recu(root, 1)
+        else:
+            return 0
 
 
 sol = Solution()
