@@ -11,9 +11,7 @@ class Solution:
             if(nums[j] == 0 and zeroCount < k):
                 zeroCount += 1
             elif (nums[j] == 0 and zeroCount >=k):
-                while(nums[i] != 0):
-                    i += 1
-                i += 1
+                i = nums.index(0, i) + 1
             j+=1
             maxLength = max(maxLength, j-i)
         return maxLength
