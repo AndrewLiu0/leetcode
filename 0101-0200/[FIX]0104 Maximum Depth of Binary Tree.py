@@ -18,8 +18,16 @@ class Solution:
                 return recu(node.left, depth + 1)
             else:
                 return max(recu(node.left, depth + 1), recu(node.right, depth + 1))
-        return recu(root, 0)
+    
+        if (root == None):
+            return 0
+        return recu(root, 1)
 
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if(root == None):
+            return 0
+        left = self.maxDepth(root.left)
+        right = self.maxDepth(root.right)
+        return 1 + max(left, right)
 
-sol = Solution()
-print(sol.maxDepth([3,9,20,None,None,15,7]))
